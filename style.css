@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+}
+#ramen{
+    display: flex;
+    gap: 10px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+#ramen div {
+    text-align: center; 
+}
+#ramen img {
+    width: 150px; 
+    height: auto; 
+    border-radius: 8px; 
+    cursor: pointer;
+}
+#new-ramen-menu{
+    display: flex;
+    flex-direction: row;
+}
