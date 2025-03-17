@@ -36,6 +36,24 @@
             </div>
         </div>
         
+        <div id="ramen-detail">
+            <h2 id="ramen-name"></h2>
+            <p id="ramen-restaurant"></p>
+            <img id="ramen-image" src="" alt="Ramen Image">
+            <p>Rating: <span id="ramen-rating"></span></p>
+            <p>Comment: <span id="ramen-comment"></span></p>
+        </div>
+
+        <h2>Add New Ramen</h2>
+        <form id="ramen-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="restaurant" placeholder="Restaurant" required>
+            <input type="url" id="image" placeholder="Image URL" required>
+            <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5" required>
+            <input type="text" id="comment" placeholder="Comment" required>
+            <button type="submit">Add Ramen</button>
+        </form>
+        
     </head>
 </body>
 </html>
