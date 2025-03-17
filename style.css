@@ -17,7 +17,8 @@ body {
     border-radius: 8px; 
     cursor: pointer;
 }
-#new-ramen-menu{
+#ramen-form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
 }
