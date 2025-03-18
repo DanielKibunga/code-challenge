@@ -17,9 +17,10 @@ body {
     border-radius: 8px; 
     cursor: pointer;
 }
-#ramen-form {
+#ramen-form , #ramen-details{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
 }
 
