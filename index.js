@@ -6,21 +6,22 @@ let ramens = [
     { id: 5, name: "Shoyu Ramen", restaurant: "Ichiran", image: "shoyu.jpg", rating: 5, comment: "Classic and delicious!" }
 ];
 
+let menu = document.getElementById("ramen-menu");
+let form = document.getElementById("ramen-form");
+
 function displayRamens() {
-    let menu = document.getElementById("ramen-menu");
     menu.innerHTML = ""; 
 
     ramens.forEach((ramen) => {
         let img = document.createElement("img");
         img.src = ramen.image;
         img.alt = ramen.name;
-        img.addEventListener("click", () => displayRamenDetails(ramen)); // Click event to show details
+        img.addEventListener("click", () => handleClick(ramen));
         menu.appendChild(img);
     });
 }
 
-
-function displayRamenDetails(ramen) {
+function handleClick(ramen) {
     document.getElementById("ramen-image").src = ramen.image;
     document.getElementById("ramen-name").textContent = ramen.name;
     document.getElementById("ramen-restaurant").textContent = ramen.restaurant;
@@ -28,3 +29,27 @@ function displayRamenDetails(ramen) {
     document.getElementById("ramen-comment").textContent = ramen.comment;
 }
 
+function addSubmitListener() {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let newRamen = {
+            name: form.name.value,
+            restaurant: form.restaurant.value,
+            image: form.image.value,
+            rating: form.rating.value,
+            comment: form.comment.value
+        };
+
+        let img = document.createElement("img");
+        img.src = newRamen.image;
+        img.alt = newRamen.name;
+        img.addEventListener("click", () => handleClick(newRamen));
+
+        menu.appendChild(img);
+        form.reset();
+    });
+}
+
+displayRamens();
+addSubmitListener();
